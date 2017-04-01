@@ -1,14 +1,23 @@
-require 'capistrano/setup'
-require 'capistrano/deploy'
-require 'capistrano/scm/git'
+require 'rubygems'
+require 'capistrano-buildpack'
 
-install_plugin Capistrano::SCM::Git
+set :application, "mastodon"
+set :repository, "git@git.zrail.net:peter/mastodon.git"
+set :scm, :git
+set :buildpack_url, "git@git.zrail.net:peter/bugsplat-buildpack-ruby-shared"
 
-require 'capistrano/rbenv'
-require 'capistrano/bundler'
-require 'capistrano/yarn'
-require 'capistrano/rails/assets'
-require 'capistrano/faster_assets'
-require 'capistrano/rails/migrations'
+set :user, "peter"
 
-Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
+set :concurrency, "web=1"
+
+load 'deploy'
+
+role :web, "subspace.zrail.net"
+set :base_port, 6700
+set :use_ssl, true
+
+set :additional_domains, %w(
+  social.keenfamily.us
+)
+
+read_env 'prod'

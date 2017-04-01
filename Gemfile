@@ -78,11 +78,8 @@ group :development do
   gem 'bullet'
   gem 'active_record_query_trace'
 
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-yarn'
-  gem 'capistrano-faster-assets', '~> 1.0'
+  gem 'capistrano', '2.12.0'
+  gem 'capistrano-buildpack', '0.0.14'
 end
 
 group :production do

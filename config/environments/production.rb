@@ -55,6 +55,7 @@ Rails.application.configure do
     ENV['REDIS_HOST'] = redis_url.host
     ENV['REDIS_PORT'] = redis_url.port.to_s
     ENV['REDIS_PASSWORD'] = redis_url.password
+    ENV['REDIS_DB'] = redis_url.path
   end
 
   # Use a different cache store in production.
@@ -62,7 +63,7 @@ Rails.application.configure do
     host: ENV.fetch('REDIS_HOST') { 'localhost' },
     port: ENV.fetch('REDIS_PORT') { 6379 },
     password: ENV.fetch('REDIS_PASSWORD') { false },
-    db: 0,
+    db: ENV['REDIS_DB'],
     namespace: 'cache',
     expires_in: 20.minutes,
   }

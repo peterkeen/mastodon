@@ -12,8 +12,8 @@ set :concurrency, "web=1"
 
 load 'deploy'
 
-role :web, "subspace.zrail.net"
-set :base_port, 6700
+role :web, "kodos.zrail.net"
+set :base_port, 8900
 set :use_ssl, true
 
 set :additional_domains, %w(

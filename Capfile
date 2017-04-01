@@ -8,7 +8,7 @@ set :buildpack_url, "git@git.zrail.net:peter/bugsplat-buildpack-ruby-shared"
 
 set :user, "peter"
 
-set :concurrency, "web=1"
+set :concurrency, "web=1,worker=1"
 
 load 'deploy'
 

@@ -3,6 +3,7 @@ require 'capistrano-buildpack'
 
 set :application, "mastodon"
 set :repository, "git@git.zrail.net:peter/mastodon.git"
+set :branch, "bugsplat"
 set :scm, :git
 set :buildpack_url, "git@git.zrail.net:peter/bugsplat-buildpack-ruby-shared"
 

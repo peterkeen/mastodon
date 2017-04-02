@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bundle exec sidekiq -q default -q mailers -q push 2>&1 | logger -t mastodon-worker

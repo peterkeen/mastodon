@@ -12,9 +12,8 @@ set :concurrency, "web=1,worker=1"
 
 load 'deploy'
 
-role :web, "kodos.zrail.net"
+role :web, "subspace.bugsplat.info"
 set :base_port, 8900
-set :use_ssl, true
 
 set :additional_domains, %w(
   social.keenfamily.us

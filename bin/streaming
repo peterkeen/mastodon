@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export PORT=4000
+export NODE_ENV=production
+
+/usr/bin/npm run start 2>&1 | logger -t mastodon-streaming

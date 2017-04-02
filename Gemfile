@@ -79,7 +79,7 @@ group :development do
   gem 'active_record_query_trace'
 
   gem 'capistrano', '2.12.0'
-  gem 'capistrano-buildpack', '0.0.14'
+  gem 'capistrano-buildpack', '0.0.15'
 end
 
 group :production do

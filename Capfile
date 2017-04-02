@@ -8,15 +8,13 @@ set :buildpack_url, "git@git.zrail.net:peter/bugsplat-buildpack-ruby-shared"
 
 set :user, "peter"
 
-set :concurrency, "web=1,worker=1"
+set :concurrency, "web=1,worker=1,streaming=1"
 
 load 'deploy'
 
 role :web, "subspace.bugsplat.info"
 set :base_port, 8900
-set :use_ssl, true
-set :ssl_cert_path, '/etc/letsencrypt/live/social.keenfamily.us/fullchain.pem'
-set :ssl_key_path, '/etc/letsencrypt/live/social.keenfamily.us/privkey.pem'
+set :skip_nginx_export, true
 
 set :additional_domains, %w(
   social.keenfamily.us

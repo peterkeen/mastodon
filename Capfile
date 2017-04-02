@@ -15,7 +15,6 @@ load 'deploy'
 role :web, "subspace.bugsplat.info"
 set :base_port, 8900
 set :use_ssl, true
-set :force_ssl, true
 set :ssl_cert_path, '/etc/letsencrypt/live/social.keenfamily.us/fullchain.pem'
 set :ssl_key_path, '/etc/letsencrypt/live/social.keenfamily.us/privkey.pem'
 

@@ -87,4 +87,5 @@ group :production do
   gem 'redis-rails'
   gem 'lograge'
   gem 'rack-timeout'
+  gem 'therubyracer'
 end
